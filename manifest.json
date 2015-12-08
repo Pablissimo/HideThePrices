@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+
+    "name": "Hide The Prices",
+    "description": "Temporarily replaces prices on web pages with placeholders to let you shop for presents together without fussing over cost",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Hide the prices"
+    },
+    "background": {
+        "scripts": [ "background.js" ]
+    },
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [ "hideprices.js" ],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "storage"
+    ]
+}
